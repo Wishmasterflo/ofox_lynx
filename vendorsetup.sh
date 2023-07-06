@@ -19,9 +19,6 @@ export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
 # We have a/b partitions
 export FOX_OF_AB_DEVICE=1
 
-# Vendor Boot recovery
-export FOX_VENDOR_BOOT_RECOVERY=1
-
 # Screen specifications
 #export OF_SCREEN_H=1920
 #export OF_SCREEN_W=1080
