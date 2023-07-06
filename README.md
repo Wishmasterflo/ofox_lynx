@@ -1,4 +1,4 @@
-# Android device tree for google Pixel 7a (lynx)
+# Orangefox recovery for google Pixel 7a (lynx)
 
 ```
 #
