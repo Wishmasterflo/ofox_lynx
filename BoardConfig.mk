@@ -82,6 +82,7 @@ TARGET_KERNEL_EXT_MODULES := \
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
+BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
@@ -93,17 +94,21 @@ BOARD_SUPER_PARTITION_GROUPS := google_dynamic_partitions
 BOARD_GOOGLE_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_dlkm system_ext product vendor vendor_dlkm
 BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
-VENDOR_CMDLINE := "androidboot.console=ttySAC0 \
-		androidboot.memcg=1 \
-		lpm_levels.sleep_disabled=1 \
-		video=vfb:640x400,bpp=32,memsize=3072000 \
-		msm_rtb.filter=0x237 \
-		service_locator.enable=1 \
-		androidboot.usbcontroller=a600000.dwc3 \
+VENDOR_CMDLINE := "earlycon=exynos4210,0x10A00000 \
+                console=ttySAC0,115200 \
+		androidboot.console=ttySAC0 \
+		printk.devkmsg=on \
+		cma_sysfs.experimental=Y \
+		cgroup_disable=memory \
+		rcupdate.rcu_expedited=1 \
+		rcu_nocbs=all \
+		stack_depot_disable=off \
+		page_pinner=on \
 		swiotlb=1024 \
-		loop.max_part=7 \
-		cgroup.memory=nokmem,nosocket \
-		reboot=panic_warm \
+		disable_dma32=on \
+		at24.write_timeout=100 \
+		log_buf_len=1024K \
+		bootconfig \
 		androidboot.init_fatal_reboot_target=recovery"
 
 # Kernel
@@ -134,13 +139,14 @@ TARGET_KERNEL_SOURCE := kernel/google/gs201/private/gs-google
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtbs
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-#  BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
-#  BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
-#  BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
-#  BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-#  BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
-#  BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) 
-#  BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
+BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
+BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) 
+BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(VENDOR_CMDLINE)
 
 # Platform
 TARGET_BOARD_PLATFORM := gs201
@@ -170,5 +176,6 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
+
 TW_EXCLUDE_APEX := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
