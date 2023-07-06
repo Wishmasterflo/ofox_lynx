@@ -16,19 +16,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from virtual AB OTA config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
-
-# Enable project quotas and casefolding for emulated storage without sdcardfs
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/recovery/root/fstab-generic.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
-
-PRODUCT_PACKAGES += \
-    linker.vendor_ramdisk \
-    resize2fs.vendor_ramdisk \
-    fsck.vendor_ramdisk \
-    tune2fs.vendor_ramdisk
 
 #SHIPPING API
 PRODUCT_SHIPPING_API_LEVEL := 32
@@ -113,4 +100,3 @@ PRODUCT_VENDOR_PROPERTIES += \
 	persist.vendor.vibrator.hal.context.fade=true \
 	persist.vendor.vibrator.hal.context.cooldowntime=1600 \
 	persist.vendor.vibrator.hal.context.settlingtime=5000
-
