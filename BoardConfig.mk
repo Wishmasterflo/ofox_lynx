@@ -20,7 +20,6 @@ AB_OTA_PARTITIONS += \
     vendor_dlkm \
     boot \
     vbmeta
-BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -94,33 +93,46 @@ BOARD_SUPER_PARTITION_GROUPS := google_dynamic_partitions
 BOARD_GOOGLE_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_dlkm system_ext product vendor vendor_dlkm
 BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
-VENDOR_CMDLINE := "console=ttyMSM0,115200n8 \
-		androidboot.hardware=qcom \
-		androidboot.console=ttyMSM0 \
+VENDOR_CMDLINE := "androidboot.console=ttySAC0 \
 		androidboot.memcg=1 \
 		lpm_levels.sleep_disabled=1 \
 		video=vfb:640x400,bpp=32,memsize=3072000 \
 		msm_rtb.filter=0x237 \
 		service_locator.enable=1 \
 		androidboot.usbcontroller=a600000.dwc3 \
-		swiotlb=2048 \
+		swiotlb=1024 \
 		loop.max_part=7 \
 		cgroup.memory=nokmem,nosocket \
 		reboot=panic_warm \
 		androidboot.init_fatal_reboot_target=recovery"
 
 # Kernel
-#BOARD_KERNEL_IMAGE_NAME := Image.lz4
-#TARGET_KERNEL_CONFIG := cloudripper_gki_defconfig
-#TARGET_KERNEL_SOURCE := kernel/google/gs201/private/gs-google
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-TARGET_NEEDS_DTBOIMAGE := true
+BOARD_KERNEL_BASE        := 0x1000000
+BOARD_KERNEL_PAGESIZE    := 2048
+BOARD_KERNEL_OFFSET      := 0x00008000
+BOARD_RAMDISK_OFFSET     := 0x01000000
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_DTB_OFFSET         := 0x01f00000
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := device/google/gs201/vendor_dlkm.modules.blocklist
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/google/gs201/private/google-modules
+
+# vendor_boot as recovery
+  BOARD_BOOT_HEADER_VERSION := 4
+  BOARD_USES_RECOVERY_AS_BOOT := false
+  BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
+  BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+  BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := false
+  BOARD_USES_GENERIC_KERNEL_IMAGE := true
+  BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+  BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+  BOARD_KERNEL_IMAGE_NAME := Image.lz4
+  TARGET_KERNEL_CONFIG := cloudripper_gki_defconfig
+  TARGET_KERNEL_SOURCE := kernel/google/gs201/private/gs-google
+  TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+  TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
+  BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
 # Platform
 TARGET_BOARD_PLATFORM := gs201
@@ -129,13 +141,6 @@ TARGET_BOARD_PLATFORM := gs201
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-
-# Enable chain partition for vendor.
-BOARD_AVB_VBMETA_VENDOR := vendor
-BOARD_AVB_VBMETA_VENDOR_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
-BOARD_AVB_VBMETA_VENDOR_ALGORITHM := SHA256_RSA2048
-BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 3
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -159,3 +164,4 @@ TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_APEX := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+
