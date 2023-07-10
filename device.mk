@@ -22,7 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/recovery/root/fstab-generic.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+    $(DEVICE_PATH)/recovery/root/fstab.gs201:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/system/etc/fstab.gs201
 
 PRODUCT_PACKAGES += \
     linker.vendor_ramdisk \
