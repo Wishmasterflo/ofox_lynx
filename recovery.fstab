@@ -6,7 +6,6 @@
 /vendor_dlkm     ext4     vendor_dlkm                                            flags=display=vendor_dlkm;logical;slotselect
 /boot            emmc     /dev/block/platform/14700000.ufs/by-name/boot          flags=display=boot;slotselect
 /init_boot       emmc     /dev/block/platform/14700000.ufs/by-name/init_boot     flags=display=init_boot;slotselect
-/vendor_boot     emmc     /dev/block/platform/14700000.ufs/by-name/vendor_boot   flags=display=vendor_boot;slotselect
 /misc            emmc     /dev/block/platform/14700000.ufs/by-name/misc          flags=display=misc
 /metadata        f2fs     /dev/block/platform/14700000.ufs/by-name/metadata      flags=display=metadata
 /data            f2fs     /dev/block/platform/14700000.ufs/by-name/userdata      flags=display=data
