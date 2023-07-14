@@ -27,9 +27,6 @@ export FOX_VENDOR_BOOT_RECOVERY=1
 export FOX_RECOVERY_VENDOR_BOOT_PARTITION="/dev/block/platform/14700000.ufs/by-name/vendor_boot"
 
 # Screen specifications
-#export OF_SCREEN_H=1920
-#export OF_SCREEN_W=1080
-#export OF_STATUS_H=100
 export OF_STATUS_INDENT_LEFT=48
 export OF_STATUS_INDENT_RIGHT=48
 export OF_ALLOW_DISABLE_NAVBAR=0
@@ -40,6 +37,9 @@ export OF_KEEP_FORCED_ENCRYPTION=1
 export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
 export OF_FBE_METADATA_MOUNT_IGNORE=1
 export OF_PATCH_AVB20=1
+
+# Disable decryption
+export OF_SKIP_FBE_DECRYPTION=1
 
 # Run a process after formatting data to work-around MTP issues
 export OF_RUN_POST_FORMAT_PROCESS=1
