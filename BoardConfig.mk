@@ -10,6 +10,12 @@ DEVICE_PATH := device/google/lynx
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
+# 12.1 manifest requirements
+TARGET_SUPPORTS_64_BIT_APPS := true
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
@@ -105,7 +111,6 @@ VENDOR_CMDLINE := "dyndbg=\"func alloc_contig_dump_pages +p\" \
 		swiotlb=1024 \
 		disable_dma32=on \
 		log_buf_len=1024K \
-		twrpfastboot=1 \
 		androidboot.selinux=permissive"
 
 # Kernel
@@ -153,6 +158,9 @@ TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Ramdisk compression
+BOARD_RAMDISK_USE_LZ4 := true
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
@@ -168,6 +176,7 @@ TW_EXTRA_LANGUAGES := true
 TW_NO_SCREEN_BLANK := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_INCLUDE_FASTBOOTD := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
