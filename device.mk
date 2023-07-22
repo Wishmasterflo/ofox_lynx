@@ -121,3 +121,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 	persist.vendor.vibrator.hal.context.fade=true \
 	persist.vendor.vibrator.hal.context.cooldowntime=1600 \
 	persist.vendor.vibrator.hal.context.settlingtime=5000
+
+# ofox
+PRODUCT_COPY_FILES += \
+    device/google/lynx/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml \
+
+
