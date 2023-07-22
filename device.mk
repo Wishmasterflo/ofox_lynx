@@ -34,8 +34,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SHIPPING_API_LEVEL := 32
 PRODUCT_TARGET_VNDK_VERSION := 32
 
-# A/B OTA
+# define hardware platform
+PRODUCT_PLATFORM := gs201
 
+# A/B OTA
 AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS += \
@@ -78,11 +80,17 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
+# Dynamic partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     android.hardware.fastboot@1.0-impl-mock.recovery \
     fastbootd 
+
+# Hidl Service
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
 # Display Config
 PRODUCT_COPY_FILES += \
