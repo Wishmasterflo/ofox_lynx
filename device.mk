@@ -89,6 +89,10 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock.recovery \
     fastbootd 
 
+# vndservicemanager and vndservice no longer included in API 30+, however needed by vendor code.
+PRODUCT_PACKAGES += vndservicemanager
+PRODUCT_PACKAGES += vndservice
+
 # Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
@@ -125,5 +129,3 @@ PRODUCT_VENDOR_PROPERTIES += \
 # ofox
 PRODUCT_COPY_FILES += \
     device/google/lynx/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml \
-
-
