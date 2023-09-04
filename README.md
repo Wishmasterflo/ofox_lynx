@@ -1,5 +1,7 @@
 # Orangefox recovery for google Pixel 7a (lynx)
 
+This is still "work in progress" and not working yet!
+
 ```
 #
 # Copyright (C) 2023 The Android Open Source Project
