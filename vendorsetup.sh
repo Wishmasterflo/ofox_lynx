@@ -21,6 +21,7 @@ export FOX_VANILLA_BUILD=1
 
 # We have a/b partitions
 export FOX_AB_DEVICE=1
+export FOX_VIRTUAL_AB_DEVICE=1
 
 # Vendor Boot recovery
 export FOX_VENDOR_BOOT_RECOVERY=1
