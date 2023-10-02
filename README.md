@@ -2,7 +2,7 @@
 
 This is still "work in progress". I have removed the Orangefox release again now as it was not booting up after flashing it. 
 
-Based on August 2023 Kernel
+Based on September 2023 Kernel
 
 ## Installation methods:
 
