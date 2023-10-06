@@ -109,12 +109,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.secure_element@1.2-service-gto \
 	android.hardware.secure_element@1.2-service-gto-ese2
 
-PLATFORM_VERSION := 99.87.36
-PLATFORM_SECURITY_PATCH := 2127-12-31
-PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
-VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
-BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
-
 # Vibrator
 PRODUCT_VENDOR_PROPERTIES += \
 	ro.vendor.vibrator.hal.supported_primitives=243 \
