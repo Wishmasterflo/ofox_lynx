@@ -10,6 +10,8 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 export TARGET_DEVICE_ALT="Pixel7a, GooglePixel7a, lynx, Lynx"
 export FOX_TARGET_DEVICES="Pixel7a, GooglePixel7a, lynx, Lynx"
+export BUILD_USERNAME="nobody"
+export BUILD_HOSTNAME="android-build"
 
 # Use magisk boot for patching
 export OF_USE_MAGISKBOOT=1
@@ -53,7 +55,7 @@ export FOX_BUGGED_AOSP_ARB_WORKAROUND="1601559499"
 export OF_QUICK_BACKUP_LIST="/boot;/data;/super;"
 
 # Magisk 26.3
-export FOX_USE_SPECIFIC_MAGISK_ZIP=device/oneplus/lynx/Magisk/Magisk-v26.3.zip
+export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v26.3.zip
 
 # Dont install AROMAFM
 export FOX_DELETE_AROMAFM=1
