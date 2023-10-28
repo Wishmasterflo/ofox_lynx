@@ -1,6 +1,6 @@
 # Orangefox Recovery for google Pixel 7a (lynx)
 
-This is still "work in progress". I have removed the Orangefox release again now as it was not booting up after flashing it. 
+This is still "work in progress". 
 
 Based on October 2023 Kernel (Android 14)
 
