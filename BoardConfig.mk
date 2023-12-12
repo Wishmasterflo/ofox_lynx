@@ -177,6 +177,7 @@ TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_NO_SCREEN_BLANK := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_MAX_BRIGHTNESS := 520
 TW_INCLUDE_FASTBOOTD := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_USE_TOOLBOX := true
