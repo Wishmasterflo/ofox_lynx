@@ -56,7 +56,7 @@ export FOX_BUGGED_AOSP_ARB_WORKAROUND="1601559499"
 export OF_QUICK_BACKUP_LIST="/boot;/data;/super;"
 
 # Magisk
-export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v26.4.zip
+export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v27.0.zip
 
 # Dont install AROMAFM
 export FOX_DELETE_AROMAFM=1
