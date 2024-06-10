@@ -1,3 +1,5 @@
+<img src="https://github.com/Sanju0910/Sanju0910/blob/main/images/of_logo.png" width=100 height=100 align="left" />  
+
 # Orangefox Recovery for google Pixel 7a (lynx)
 
 This is still "work in progress". 
