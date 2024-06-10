@@ -2,7 +2,7 @@
 
 This is still "work in progress". 
 
-Based on February 2024 Kernel (Android 14)
+Based on May 2024 A14 Kernel
 
 ## Installation methods:
 
