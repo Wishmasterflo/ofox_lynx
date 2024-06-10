@@ -21,6 +21,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+$(call inherit-product-if-exists, vendor/google_devices/lynx/prebuilts/device-vendor-lynx.mk)
+$(call inherit-product-if-exists, vendor/google_devices/gs201/prebuilts/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/google_devices/lynx/proprietary/lynx/device-vendor-lynx.mk)
+$(call inherit-product-if-exists, vendor/google_devices/lynx/proprietary/device-vendor.mk)
+		
+include device/google/gs-common/touch/gti/gti.mk
+
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/recovery/root/fstab.gs201:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/system/etc/fstab.gs201
 
@@ -122,6 +130,14 @@ PRODUCT_VENDOR_PROPERTIES += \
 	persist.vendor.vibrator.hal.context.fade=true \
 	persist.vendor.vibrator.hal.context.cooldowntime=1600 \
 	persist.vendor.vibrator.hal.context.settlingtime=5000
+
+# Power HAL config
+PRODUCT_COPY_FILES += \
+	device/google/lynx/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+# PowerStats HAL
+PRODUCT_SOONG_NAMESPACES += \
+    device/google/lynx/powerstats \
+    device/google/lynx
 
 # Identity credential
 PRODUCT_PACKAGES += \
