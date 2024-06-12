@@ -42,10 +42,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 device/google/lynx/conf/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.lynx.rc
 
-# Recovery files
-PRODUCT_COPY_FILES += \
-device/google/lynx/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.lynx.rc
-
 #SHIPPING API
 PRODUCT_SHIPPING_API_LEVEL := 32
 PRODUCT_TARGET_VNDK_VERSION := 32
