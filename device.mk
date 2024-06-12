@@ -38,6 +38,14 @@ PRODUCT_PACKAGES += \
     fsck.vendor_ramdisk \
     tune2fs.vendor_ramdisk
 
+# Init files
+PRODUCT_COPY_FILES += \
+device/google/lynx/conf/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.lynx.rc
+
+# Recovery files
+PRODUCT_COPY_FILES += \
+device/google/lynx/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.lynx.rc
+
 #SHIPPING API
 PRODUCT_SHIPPING_API_LEVEL := 32
 PRODUCT_TARGET_VNDK_VERSION := 32
@@ -134,6 +142,18 @@ PRODUCT_VENDOR_PROPERTIES += \
 	persist.vendor.vibrator.hal.context.fade=true \
 	persist.vendor.vibrator.hal.context.cooldowntime=1600 \
 	persist.vendor.vibrator.hal.context.settlingtime=5000
+
+# Vibrator HAL
+ADAPTIVE_HAPTICS_FEATURE := adaptive_haptics_v1
+PRODUCT_VENDOR_PROPERTIES += \
+ro.vendor.vibrator.hal.supported_primitives=243 \
+ro.vendor.vibrator.hal.f0.comp.enabled=1 \
+ro.vendor.vibrator.hal.redc.comp.enabled=0 \
+persist.vendor.vibrator.hal.context.enable=false \
+persist.vendor.vibrator.hal.context.scale=40 \
+persist.vendor.vibrator.hal.context.fade=true \
+persist.vendor.vibrator.hal.context.cooldowntime=1600 \
+persist.vendor.vibrator.hal.context.settlingtime=5000
 
 # Power HAL config
 PRODUCT_COPY_FILES += \
