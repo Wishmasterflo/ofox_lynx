@@ -44,6 +44,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 device/google/lynx/conf/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.lynx.rc
 
+# Init files
+PRODUCT_COPY_FILES += \
+	$(LOCAL_KERNEL):kernel \
+	device/google/gs201/conf/init.gs201.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.gs201.usb.rc \
+	device/google/gs201/conf/ueventd.gs201.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
+
 #SHIPPING API
 PRODUCT_SHIPPING_API_LEVEL := 32
 PRODUCT_TARGET_VNDK_VERSION := 32
@@ -132,6 +138,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layer
 # Touch
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
+
+# USB HAL
+PRODUCT_PACKAGES += \
+	android.hardware.usb-service
+PRODUCT_PACKAGES += \
+	android.hardware.usb.gadget-service
 
 # SecureElement
 PRODUCT_PACKAGES += \
