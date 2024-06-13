@@ -46,7 +46,6 @@ device/google/lynx/conf/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.
 
 # Init files
 PRODUCT_COPY_FILES += \
-	$(LOCAL_KERNEL):kernel \
 	device/google/gs201/conf/init.gs201.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.gs201.usb.rc \
 	device/google/gs201/conf/ueventd.gs201.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
