@@ -49,6 +49,10 @@ PRODUCT_COPY_FILES += \
 	device/google/gs201/conf/init.gs201.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.gs201.usb.rc \
 	device/google/gs201/conf/ueventd.gs201.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
+# Device Manifest file
+DEVICE_MANIFEST_FILE := \
+device/google/lynx/manifest.xml
+
 #SHIPPING API
 PRODUCT_SHIPPING_API_LEVEL := 32
 PRODUCT_TARGET_VNDK_VERSION := 32
