@@ -12,6 +12,13 @@ on init
     wait /sys/devices/platform/11210000.usb/11210000.dwc3/driver 10
     setprop sys.usb.controller "11210000.dwc3"
     setprop sys.usb.configfs 1
+    start gatekeeper
+    start citadeld
+    start keymint-citadel
+    start keymint-trusty
+    start identity-citadeld
+    start weaver-citadeld
+    
 
 on init && property:ro.debuggable=1 && property:ro.boot.mode=recovery
     start recovery-console
@@ -24,3 +31,39 @@ service recovery-console /system/bin/sh
     group root shell log readproc
     seclabel u:r:su:s0
     setenv HOSTNAME console
+
+service citadeld /system/bin/citadeld
+    disabled
+    user hsm
+    group hsm
+    seclabel u:r:recovery:s0
+
+service weaver-citadeld /system/bin/android.hardware.weaver@1.0-service.citadel
+    disabled
+    user hsm
+    group hsm
+    seclabel u:r:recovery:s0
+
+service identity-citadeld /system/bin/android.hardware.identity@1.0-service.citadel
+    disabled
+    user nobody
+    group nobody
+    seclabel u:r:recovery:s0
+
+service keymint-trusty /system/bin/android.hardware.security.keymint-service.trusty
+    disabled
+    user nobody
+    group drmrpc
+    seclabel u:r:recovery:s0
+
+service keymint-citadel /system/bin/android.hardware.security.keymint-service.citadel
+    disabled
+    user hsm
+    group hsm
+    seclabel u:r:recovery:s0
+
+service gatekeeper /system/bin/android.hardware.gatekeeper@1.0-service.trusty
+    disabled
+    user system
+    group system
+    seclabel u:r:recovery:s0
