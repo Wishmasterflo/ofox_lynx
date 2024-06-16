@@ -44,9 +44,6 @@ export OF_FBE_METADATA_MOUNT_IGNORE=1
 export OF_PATCH_AVB20=1
 export OF_USE_LEGACY_BATTERY_SERVICES=1
 
-# Disable decryption
-export OF_SKIP_FBE_DECRYPTION=1
-
 # Run a process after formatting data to work-around MTP issues
 export OF_RUN_POST_FORMAT_PROCESS=1
 
