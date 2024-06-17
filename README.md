@@ -5,7 +5,7 @@
 This is still "work in progress". 
 It seems to boot now at least!
 
-Based on May 2024 A14 Kernel
+Based on June 2024 A14 Kernel
 
 ## Installation methods:
 
