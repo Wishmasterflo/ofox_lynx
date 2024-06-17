@@ -122,7 +122,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_DTB_OFFSET         := 0x01f00000
 
 # Kernel modules
-BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := device/google/gs201/vendor_dlkm.modules.blocklist
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := device/google/lynx/vendor_dlkm.modules.blocklist
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/google/gs201/private/google-modules
 
 # vendor_boot as recovery
