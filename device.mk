@@ -75,6 +75,7 @@ AB_OTA_PARTITIONS += \
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
+    cppreopts.sh \
     checkpoint_gc \
     update_engine \
     update_engine_sideload \
@@ -93,13 +94,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     bootctrl.gs201
-
-PRODUCT_PACKAGES += \
-    otapreopt_script \
-    cppreopts.sh \
-    update_engine \
-    update_verifier \
-    update_engine_sideload
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
