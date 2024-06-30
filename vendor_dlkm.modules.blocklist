@@ -1,6 +1,3 @@
-blocklist bcmdhd4389
-blocklist synadhd
-blocklist fst2
 blocklist ftm5
 blocklist mali_kutf
 blocklist mali_kutf_clk_rate_trace_test_portal
