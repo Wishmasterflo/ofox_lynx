@@ -114,6 +114,10 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder.vendor
 
+# Adjusted vendor module blocklist file
+PRODUCT_COPY_FILES += \
+    device/google/lynx/vendor_dlkm.modules.blocklist:$(TARGET_COPY_OUT_VENDOR)/vendor_dlkm.modules.blocklist
+
 # insmod files
 PRODUCT_COPY_FILES += \
 	device/google/lynx/init.insmod.lynx.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.lynx.cfg
