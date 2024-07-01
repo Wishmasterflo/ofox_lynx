@@ -38,6 +38,10 @@ PRODUCT_PACKAGES += \
     fsck.vendor_ramdisk \
     tune2fs.vendor_ramdisk
 
+# Load Touch screen modules
+PRODUCT_PACKAGES += \
+    lynx_prebuilt
+
 # Init files
 PRODUCT_COPY_FILES += \
 device/google/lynx/conf/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.lynx.rc
