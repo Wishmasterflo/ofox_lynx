@@ -62,12 +62,12 @@ TARGET_KERNEL_DTB := \
     google/devices/lynx/google-base/gs201-b0_v2-ipop.dtb
 
 # Kernel modules
-BOARD_VENDOR_KERNEL_MODULES_LOAD_RAW := $(strip $(shell cat device/google/lynx/vendor_dlkm.modules.load))
+BOARD_VENDOR_KERNEL_MODULES_LOAD_RAW := $(strip $(shell cat kernel/google/lynx/vendor_dlkm.modules.load))
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(foreach m,$(BOARD_VENDOR_KERNEL_MODULES_LOAD_RAW),$(notdir $(m)))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD_RAW := $(strip $(shell cat device/google/lynx/vendor_kernel_boot.modules.load))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD_RAW := $(strip $(shell cat kernel/google/lynx/vendor_kernel_boot.modules.load))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(foreach m,$(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD_RAW),$(notdir $(m)))
 BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD)
-BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := device/google/lynx/vendor_dlkm.modules.blocklist
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := kernel/google/lynx/vendor_dlkm.modules.blocklist
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/google/gs201/private/google-modules
 
 TARGET_KERNEL_EXT_MODULES := \
