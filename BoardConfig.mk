@@ -102,8 +102,7 @@ BOARD_SUPER_PARTITION_GROUPS := google_dynamic_partitions
 BOARD_GOOGLE_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor vendor_dlkm
 BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
-VENDOR_CMDLINE := "exynos_drm.load_sequential=1 \
-                dyndbg=func alloc_contig_dump_pages \
+VENDOR_CMDLINE := "dyndbg=\"func alloc_contig_dump_pages +p\" \
                 earlycon=exynos4210,0x10A00000 console=ttySAC0,115200 androidboot.console=ttySAC0 printk.devkmsg=on \
 		cma_sysfs.experimental=Y \
 		cgroup_disable=memory \
@@ -115,7 +114,8 @@ VENDOR_CMDLINE := "exynos_drm.load_sequential=1 \
 		disable_dma32=on \
                 at24.write_timeout=100 \
 		log_buf_len=1024K \
-		bootconfig"
+		bootconfig \
+                exynos_drm.load_sequential=1
 
 # Kernel
 BOARD_KERNEL_BASE        := 0x1000000
