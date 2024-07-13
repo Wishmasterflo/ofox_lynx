@@ -114,14 +114,6 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder.vendor
 
-# Adjusted vendor module blocklist file
-PRODUCT_COPY_FILES += \
-    device/google/lynx/vendor_dlkm.modules.blocklist:$(TARGET_COPY_OUT_VENDOR)/vendor_dlkm.modules.blocklist
-
-# insmod files
-PRODUCT_COPY_FILES += \
-	device/google/lynx/init.insmod.lynx.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.lynx.cfg
-
 # Display Config
 PRODUCT_COPY_FILES += \
         device/google/lynx/lynx/display_colordata_dev_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_dev_cal0.pb
@@ -247,4 +239,5 @@ PRODUCT_PACKAGES += \
 
 # ofox
 PRODUCT_COPY_FILES += \
-    device/google/lynx/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml \
+    $(DEVICE_PATH)/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml
+
