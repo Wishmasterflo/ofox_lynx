@@ -1,0 +1,7 @@
+blocklist ftm5
+blocklist mali_kutf
+blocklist mali_kutf_clk_rate_trace_test_portal
+blocklist uwb_desense.ko
+blocklist uwb-hal.ko
+blocklist uwbcore.ko
+blocklist cs40l26_i2c
