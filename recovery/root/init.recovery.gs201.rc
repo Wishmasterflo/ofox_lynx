@@ -3,14 +3,3 @@ on init
     setprop sys.usb.controller "11210000.dwc3"
     setprop sys.usb.configfs 1
 
-on init && property:ro.debuggable=1 && property:ro.boot.mode=recovery
-    start recovery-console
-
-service recovery-console /system/bin/sh
-    class core
-    console
-    disabled
-    user root
-    group root shell log readproc
-    seclabel u:r:su:s0
-    setenv HOSTNAME console
