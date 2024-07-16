@@ -114,8 +114,7 @@ VENDOR_CMDLINE := "dyndbg=\"func alloc_contig_dump_pages +p\" \
 		disable_dma32=on \
                 at24.write_timeout=100 \
 		log_buf_len=1024K \
-		bootconfig \
-                androidboot.force_normal_boot=1"
+		bootconfig"
 
 # Kernel
 BOARD_KERNEL_BASE        := 0x1000000
