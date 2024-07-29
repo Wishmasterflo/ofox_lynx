@@ -149,7 +149,17 @@
         </interface>
         <fqname>@1.0::IAnt/default</fqname>
     </hal>
-      <sepolicy>
+   <hal format="hidl">
+        <name>android.hidl.token</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITokenManager</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::ITokenManager/default</fqname>
+   </hal>
+    <sepolicy>
         <version>31.0</version>
     </sepolicy>
     <kernel f-level="6"/>
