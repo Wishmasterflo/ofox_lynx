@@ -1,7 +1,3 @@
 ro.display.series=Pixel 7a
 ro.board.platform=GS201
-vendor.gatekeeper.disable_spu=true
 ro.adb.secure=0
-fbe.metadata.wrappedkey=true
-ro.crypto.volume.filenames_mode=aes-256-cts
-ro.virtual_ab.enabled=true
