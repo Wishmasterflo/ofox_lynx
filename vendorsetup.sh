@@ -16,7 +16,6 @@ export BUILD_HOSTNAME="android-build"
 # Use magisk boot for patching
 export OF_USE_MAGISKBOOT=1
 export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
-export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
 
 # Vanilla build
 export FOX_VANILLA_BUILD=1
@@ -41,7 +40,6 @@ export OF_STATUS_H=120
 export OF_KEEP_FORCED_ENCRYPTION=1
 export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
 export OF_FBE_METADATA_MOUNT_IGNORE=1
-export OF_PATCH_AVB20=1
 export OF_USE_LEGACY_BATTERY_SERVICES=1
 
 # Run a process after formatting data to work-around MTP issues
