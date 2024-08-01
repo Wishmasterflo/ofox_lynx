@@ -1,0 +1,2 @@
+require board=lynx
+require partition-exists=vendor_kernel_boot
