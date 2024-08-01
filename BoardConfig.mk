@@ -122,6 +122,9 @@ VENDOR_CMDLINE := "dyndbg=\"func alloc_contig_dump_pages +p\" \
 		log_buf_len=1024K \
 		bootconfig"
 
+BOARD_BOOTCONFIG += androidboot.load_modules_parallel=true
+BOARD_KERNEL_CMDLINE += exynos_drm.load_sequential=1
+
 # Kernel
 BOARD_KERNEL_BASE        := 0x1000000
 BOARD_KERNEL_PAGESIZE    := 2048
