@@ -46,8 +46,8 @@ device/google/lynx/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.lynx.
 
 # Init files
 PRODUCT_COPY_FILES += \
-	device/google/gs201/conf/init.gs201.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.gs201.usb.rc \
-	device/google/gs201/conf/ueventd.gs201.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
+	device/google/lynx/recovery/root/init.recovery.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.recovery.usb.rc \
+	device/google/lynx/recovery/root/vendor/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
 # Device Manifest file
 DEVICE_MANIFEST_FILE := \
@@ -304,4 +304,3 @@ include device/google/gs-common/touch/twoshay/aidl_gs101.mk
 # ofox
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml
-
