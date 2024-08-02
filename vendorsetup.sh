@@ -45,6 +45,9 @@ export OF_USE_LEGACY_BATTERY_SERVICES=1
 # Run a process after formatting data to work-around MTP issues
 export OF_RUN_POST_FORMAT_PROCESS=1
 
+# Disable decryption
+export OF_SKIP_FBE_DECRYPTION=1
+
 # For some reason this is dumb and necessary
 export FOX_BUGGED_AOSP_ARB_WORKAROUND="1601559499"
 
