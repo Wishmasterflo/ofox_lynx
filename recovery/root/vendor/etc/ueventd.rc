@@ -237,5 +237,3 @@
 /sys/devices/platform/11210000.usb/11210000.dwc3/xhci-hcd-exynos.4.auto/usb2/2-1* brightness 0664 system system
 /sys/devices/platform/11210000.usb/11210000.dwc3/xhci-hcd-exynos.4.auto/usb2/2-1* multi_intensity 0664 system system
 
-/dev/binder                            0660  system     system
-
