@@ -29,6 +29,7 @@ $(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device
 $(call inherit-product-if-exists, vendor/google_devices/lynx/proprietary/lynx/device-vendor-lynx.mk)
 $(call inherit-product-if-exists, vendor/google_devices/lynx/proprietary/device-vendor.mk)
 
+include device/google/lynx-sepolicy/lynx-sepolicy.mk 
 include device/google/gs-common/touch/gti/gti.mk
 
 PRODUCT_COPY_FILES += \
