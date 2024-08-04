@@ -60,6 +60,10 @@ TARGET_NO_BOOTLOADER := true
 # Display
 TARGET_SCREEN_DENSITY := 420
 TARGET_USES_VULKAN := true
+BOARD_EGL_CFG := device/google/gs201/conf/egl.cfg
+
+# EMULATOR common modules
+BOARD_EMULATOR_COMMON_MODULES := liblight
 
 # Kernel
 TARGET_KERNEL_DTBO_PREFIX := dts/
@@ -112,6 +116,7 @@ BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 VENDOR_CMDLINE := "dyndbg=\"func alloc_contig_dump_pages +p\" \
                 earlycon=exynos4210,0x10A00000 console=ttySAC0,115200 androidboot.console=ttySAC0 printk.devkmsg=on \
+                swiotlb=noforce \
 		cma_sysfs.experimental=Y \
 		cgroup_disable=memory \
 		rcupdate.rcu_expedited=1 \
