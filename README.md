@@ -5,7 +5,7 @@
 This is still "work in progress". 
 It seems to boot now at least but the Touch screen is not working at the moment and the colors are more a BlueFox instead of OrangeFox now. 
 
-Based on July 2024 A14 Kernel
+Based on August 2024 Kernel
 
 ## Installation methods:
 
