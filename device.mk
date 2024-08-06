@@ -303,6 +303,3 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Touch service
 include device/google/gs-common/touch/twoshay/aidl_gs101.mk
 
-# ofox
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml
