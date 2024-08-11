@@ -187,6 +187,9 @@ PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
+# sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # Load Touch modules files
 TW_LOAD_VENDOR_MODULES := "focal_touch.ko goodix_brl_touch.ko goog_touch_interface.ko"
 
