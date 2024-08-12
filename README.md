@@ -8,8 +8,8 @@ It does boot up now but has still a lot of things not working.
 - Based on August 2024 Kernel
 - Colors (blue/orange etc) are inverted so by default it is "BlueFox" instead of "OrangeFox"
 - USB (adb) working
-- Encryption is disabled right now!
-- Touch screen and buttons are not working right now
+- Encryption is disabled 
+- Touch screen and buttons are not working right now!
 
 ## Installation methods:
 
