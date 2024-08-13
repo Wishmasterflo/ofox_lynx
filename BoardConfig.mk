@@ -194,6 +194,7 @@ SELINUX_IGNORE_NEVERALLOWS := true
 TW_LOAD_VENDOR_MODULES := "focal_touch.ko goodix_brl_touch.ko goog_touch_interface.ko"
 
 # TWRP specific build flags
+TWRP_EVENT_LOGGING := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_THEME := portrait_hdpi
@@ -201,6 +202,8 @@ TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_EXTRA_LANGUAGES := true
 TW_NO_SCREEN_BLANK := true
 TW_NO_SCREEN_TIMEOUT := true
+TW_INPUT_BLACKLIST := "accelerometer"
+TW_INPUT_BLACKLIST := "gyroscope"
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_MAX_BRIGHTNESS := 520
 TW_INCLUDE_FASTBOOTD := true
