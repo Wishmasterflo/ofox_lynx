@@ -9,7 +9,8 @@ It does boot up now but has still a lot of things not working.
 - Colors (blue/orange etc) are inverted so by default it is "BlueFox" instead of "OrangeFox"
 - USB (adb) working
 - Encryption is disabled 
-- Touch screen and buttons are not working right now!
+- Touch screen stops to work after like 2 seconds. Seems to be some other sensor etc conflicting with the Touch screen
+  
 
 ## Installation methods:
 
