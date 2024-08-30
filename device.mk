@@ -277,3 +277,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Touch service
 include device/google/gs-common/touch/twoshay/aidl_gs101.mk
 
+# Build libion
+PRODUCT_PACKAGES += \
+    libion
