@@ -3,13 +3,12 @@
 # Orangefox Recovery for Google Pixel 7a (lynx)
 
 This is still "work in progress" and not a fully working recovery yet.
-It does boot up now but has still a lot of things not working. 
+Data decryption does not work!
 
 - Based on August 2024 Kernel
 - Colors (blue/orange etc) are inverted so by default it is "BlueFox" instead of "OrangeFox"
 - USB (adb) working
 - Encryption is disabled 
-- Touch screen stops to work after like 2 seconds. Seems to be some other sensor etc conflicting with the Touch screen
   
 
 ## Installation methods:
