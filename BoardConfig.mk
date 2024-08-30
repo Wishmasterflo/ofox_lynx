@@ -191,7 +191,7 @@ BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Load Touch modules files
-TW_LOAD_VENDOR_MODULES := "focal_touch.ko goodix_brl_touch.ko goog_touch_interface.ko"
+TW_LOAD_VENDOR_MODULES := "heatmap.ko touch_offload.ko ftm5.ko focal_touch.ko goodix_brl_touch.ko goog_touch_interface.ko"
 
 # TWRP specific build flags
 TWRP_EVENT_LOGGING := true
