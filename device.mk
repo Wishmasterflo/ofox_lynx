@@ -145,29 +145,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.secure_element@1.2-service-gto \
 	android.hardware.secure_element@1.2-service-gto-ese2
 
-# Vibrator
-PRODUCT_VENDOR_PROPERTIES += \
-	ro.vendor.vibrator.hal.supported_primitives=243 \
-	ro.vendor.vibrator.hal.f0.comp.enabled=1 \
-	ro.vendor.vibrator.hal.redc.comp.enabled=0 \
-	persist.vendor.vibrator.hal.context.enable=false \
-	persist.vendor.vibrator.hal.context.scale=40 \
-	persist.vendor.vibrator.hal.context.fade=true \
-	persist.vendor.vibrator.hal.context.cooldowntime=1600 \
-	persist.vendor.vibrator.hal.context.settlingtime=5000
-
-# Vibrator HAL
-ADAPTIVE_HAPTICS_FEATURE := adaptive_haptics_v1
-PRODUCT_VENDOR_PROPERTIES += \
-ro.vendor.vibrator.hal.supported_primitives=243 \
-ro.vendor.vibrator.hal.f0.comp.enabled=1 \
-ro.vendor.vibrator.hal.redc.comp.enabled=0 \
-persist.vendor.vibrator.hal.context.enable=false \
-persist.vendor.vibrator.hal.context.scale=40 \
-persist.vendor.vibrator.hal.context.fade=true \
-persist.vendor.vibrator.hal.context.cooldowntime=1600 \
-persist.vendor.vibrator.hal.context.settlingtime=5000
-
 # Power HAL config
 PRODUCT_COPY_FILES += \
 	device/google/lynx/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
