@@ -37,23 +37,3 @@ on property:persist.vendor.touch_sensitivity_mode=0 && property:sys.boot_complet
 on property:persist.vendor.touch_sensitivity_mode=1 && property:sys.boot_completed=1
     write /sys/devices/virtual/goog_touch_interface/gti.0/screen_protector_mode_enabled 1
 
-# Haptics
-on property:vendor.all.modules.ready=1
-    mkdir /mnt/vendor/persist/haptics 0770 system system
-    chmod 770 /mnt/vendor/persist/haptics
-    chmod 440 /mnt/vendor/persist/haptics/cs40l26.cal
-    chown system system /mnt/vendor/persist/haptics
-    chown system system /mnt/vendor/persist/haptics/cs40l26.cal
-
-    chown system system /sys/bus/i2c/devices/8-0043/calibration/f0_stored
-    chown system system /sys/bus/i2c/devices/8-0043/calibration/q_stored
-    chown system system /sys/bus/i2c/devices/8-0043/calibration/redc_stored
-    chown system system /sys/bus/i2c/devices/8-0043/default/vibe_state
-    chown system system /sys/bus/i2c/devices/8-0043/default/num_waves
-    chown system system /sys/bus/i2c/devices/8-0043/default/f0_offset
-    chown system system /sys/bus/i2c/devices/8-0043/default/owt_free_space
-    chown system system /sys/bus/i2c/devices/8-0043/default/f0_comp_enable
-    chown system system /sys/bus/i2c/devices/8-0043/default/redc_comp_enable
-    chown system system /sys/bus/i2c/devices/8-0043/default/delay_before_stop_playback_us
-
-    enable vendor.vibrator.cs40l26
