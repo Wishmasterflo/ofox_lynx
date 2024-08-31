@@ -3,14 +3,7 @@
 # Orangefox Recovery for Google Pixel 7a (lynx)
 
 This is still "work in progress" and not a fully working recovery yet.
-Data decryption does not work!
-
-- Based on August 2024 Kernel
-- Colors (blue/orange etc) are inverted so by default it is "BlueFox" instead of "OrangeFox"
-- USB (adb) working
-- Encryption is disabled 
   
-
 ## Installation methods:
 
 ## From recovery:
@@ -18,3 +11,12 @@ adb sideload OrangeFox-R11.1-Unofficial-lynx.zip
 
 ## From bootloader/fastboot:
 fastboot flash vendor_boot OrangeFox-R11.1-Unofficial-lynx.img
+
+## Changelog
+
+# 30-Aug-2024 R11.1 V1
+  -  Initial Orangefox recovery Version for Google Pixel 7a
+  -  Based on August 2024 Kernel
+  -  Colors (blue/orange etc) are inverted so by default it is "BlueFox" instead of "OrangeFox"
+  -  USB (adb) working (USB OTG is not working yet)
+  -  Encryption is disabled for now (as it is not working)
