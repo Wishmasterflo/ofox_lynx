@@ -1,0 +1,19 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+# mount point  fstype device                             device2              	flags
+/boot				emmc		/dev/block/platform/14700000.ufs/by-name/boot  	              flags=slotselect;display="Boot";backup=1;flashimg=1
+/init_boot			emmc		/dev/block/platform/14700000.ufs/by-name/init_boot            flags=slotselect;display="Init_Boot";backup=1;flashimg=1
+/data                           f2fs            /dev/block/platform/14700000.ufs/by-name/userdata             flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,metadata_encryption=aes-256-xts:wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption
+/dtbo				emmc		/dev/block/platform/14700000.ufs/by-name/dtbo	              flags=slotselect;display="DTBO";backup=1;flashimg=1
+/efs                            emmc            /dev/block/platform/14700000.ufs/by-name/efs                  flags=slotselect;display="EFS";backup=1;flashimg=1
+/persist		        ext4		/dev/block/platform/14700000.ufs/by-name/persist              flags=slotselect;display="Persist";backup=1;flashimg=1
+/misc                           emmc            /dev/block/platform/14700000.ufs/by-name/misc 
+/modem				emmc		/dev/block/platform/14700000.ufs/by-name/modem	              flags=slotselect;backup=1;display="Modem"
+/super                          emmc            /dev/block/platform/14700000.ufs/by-name/super	              flags=slotselect;display="Super";backup=1;flashimg=1
+/vbmeta				emmc		/dev/block/platform/14700000.ufs/by-name/vbmeta	              flags=slotselect;display="VBMeta";backup=1;flashimg=1
+/vendor_boot		        emmc		/dev/block/platform/14700000.ufs/by-name/vendor_boot          flags=slotselect;display="Vendor_Boot";backup=1;flashimg=1
+/vendor_Kernel_boot             emmc		/dev/block/platform/14700000.ufs/by-name/vendor_kernel_boot   flags=slotselect;display="Vendor_Kernel_Boot";backup=1;flashimg=1
+/usbstorage             	vfat    	/dev/block/sdg1    /dev/block/sdg     	                      flags=fsflags=utf8;display="USB OTG";storage;wipeingui;removable
+
