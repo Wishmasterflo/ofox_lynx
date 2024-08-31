@@ -15,5 +15,5 @@
 /vbmeta				emmc		/dev/block/platform/14700000.ufs/by-name/vbmeta	              flags=slotselect;display="VBMeta";backup=1;flashimg=1
 /vendor_boot		        emmc		/dev/block/platform/14700000.ufs/by-name/vendor_boot          flags=slotselect;display="Vendor_Boot";backup=1;flashimg=1
 /vendor_Kernel_boot             emmc		/dev/block/platform/14700000.ufs/by-name/vendor_kernel_boot   flags=slotselect;display="Vendor_Kernel_Boot";backup=1;flashimg=1
-/usbstorage             	vfat    	/dev/block/sdg1    /dev/block/sdg     	                      flags=fsflags=utf8;display="USB OTG";storage;wipeingui;removable
+/usbstorage             	vfat    	/dev/block/sdf1    /dev/block/sdf     	                      flags=fsflags=utf8;display="USB OTG";storage;wipeingui;removable
 
