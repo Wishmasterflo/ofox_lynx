@@ -54,7 +54,7 @@ FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
 # For some reason this is dumb and necessary
 export FOX_BUGGED_AOSP_ARB_WORKAROUND="1601559499"
 
-export OF_QUICK_BACKUP_LIST="/boot;/data;/super;"
+export OF_QUICK_BACKUP_LIST="/boot;/init_boot;/data;"
 
 # Magisk
 export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v27.0.zip
