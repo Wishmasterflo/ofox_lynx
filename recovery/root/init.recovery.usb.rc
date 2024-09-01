@@ -82,17 +82,23 @@ on property:sys.usb.config=adb
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=adb
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "adb"
-    write /config/usb_gadget/g1/idProduct 0x201c
+    write /config/usb_gadget/g1/idProduct 0x201c	
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
 # mtp
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp
-    setprop sys.usb.ffs.mtp.ready 1
+on property:sys.usb.config=mtp && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp"
-    write /config/usb_gadget/g1/idProduct 0x2008
-    write /config/usb_gadget/g1/os_desc/use 1
+    rm /config/usb_gadget/g1/configs/b.1/f1
+    rm /config/usb_gadget/g1/configs/b.1/f2
+    rm /config/usb_gadget/g1/configs/b.1/f3
+    rm /config/usb_gadget/g1/configs/b.1/f4
+    rm /config/usb_gadget/g1/configs/b.1/f5
+    write /sys/class/android_usb/android0/idVendor 0x18D1
+    write /sys/class/android_usb/android0/idProduct 0x4EE2
+    write /config/usb_gadget/g1/idVendor 0x18D1
+    write /config/usb_gadget/g1/idProduct 0x4EE2
     symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
@@ -101,10 +107,17 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp
 on property:sys.usb.config=mtp,adb
     start adbd
 
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb
+on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp_adb"
-    write /config/usb_gadget/g1/idProduct 0x201d
-    write /config/usb_gadget/g1/os_desc/use 1
+    rm /config/usb_gadget/g1/configs/b.1/f1
+    rm /config/usb_gadget/g1/configs/b.1/f2
+    rm /config/usb_gadget/g1/configs/b.1/f3
+    rm /config/usb_gadget/g1/configs/b.1/f4
+    rm /config/usb_gadget/g1/configs/b.1/f5
+    write /sys/class/android_usb/android0/idVendor 0x18D1
+    write /sys/class/android_usb/android0/idProduct 0x4EE2
+    write /config/usb_gadget/g1/idVendor 0x18D1
+    write /config/usb_gadget/g1/idProduct 0x4EE2
     symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
