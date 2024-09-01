@@ -32,6 +32,12 @@ service recovery-console /system/bin/sh
     seclabel u:r:su:s0
     setenv HOSTNAME console
 
+service vendor.boot-hal-1-0 /vendor/bin/hw/android.hardware.boot@1.0-service
+    interface android.hardware.boot@1.0::IBootControl default
+    class early_hal
+    user root
+    group root
+
 service citadeld /system/bin/citadeld
     disabled
     user hsm
