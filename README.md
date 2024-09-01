@@ -20,3 +20,4 @@ fastboot flash vendor_boot OrangeFox-R11.1-Unofficial-lynx.img
   -  Colors (blue/orange etc) are inverted so by default it is "BlueFox" instead of "OrangeFox"
   -  USB (adb) working (USB OTG is not working yet)
   -  Encryption is disabled for now (as it is not working)
+  -  Haptics and Vibration is disabled now (as it conflicts with the Touchscreen)
