@@ -27,6 +27,7 @@ export FOX_VIRTUAL_AB_DEVICE=1
 # Vendor Boot recovery
 export FOX_VENDOR_BOOT_RECOVERY=1
 export FOX_RECOVERY_VENDOR_BOOT_PARTITION="/dev/block/platform/14700000.ufs/by-name/vendor_boot"
+export OF_NO_REFLASH_CURRENT_ORANGEFOX=1
 
 # Screen specifications
 export OF_STATUS_INDENT_LEFT=48
