@@ -43,6 +43,12 @@ export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
 export OF_FBE_METADATA_MOUNT_IGNORE=1
 export OF_USE_LEGACY_BATTERY_SERVICES=1
 
+# Use updated binaries
+export FOX_REPLACE_TOOLBOX_GETPROP=1
+export FOX_USE_TAR_BINARY=1
+export FOX_BASH_TO_SYSTEM_BIN=1
+export FOX_USE_UPDATED_MAGISKBOOT=1
+
 # Run a process after formatting data to work-around MTP issues
 export OF_RUN_POST_FORMAT_PROCESS=1
 
