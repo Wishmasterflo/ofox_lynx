@@ -47,6 +47,7 @@ export OF_USE_LEGACY_BATTERY_SERVICES=1
 export FOX_REPLACE_TOOLBOX_GETPROP=1
 export FOX_BASH_TO_SYSTEM_BIN=1
 export FOX_USE_UPDATED_MAGISKBOOT=1
+export FOX_BUILD_BASH=1
 
 # Run a process after formatting data to work-around MTP issues
 export OF_RUN_POST_FORMAT_PROCESS=1
