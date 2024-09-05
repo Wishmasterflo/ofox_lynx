@@ -19,10 +19,3 @@ cc_library {
     defaults: ["bootctrl_hal_defaults"],
     static_libs: ["libgptutils.gs201"],
 }
-
-cc_library_shared {
-    name: "android.hardware.boot@1.0-impl",
-    stem: "android.hardware.boot@1.0-impl-1.1",
-    defaults: ["android.hardware.boot@1.0-impl_defaults"],
-    static_libs: ["libgptutils.gs201"],
-}
