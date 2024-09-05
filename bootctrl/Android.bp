@@ -20,11 +20,9 @@ cc_library {
     static_libs: ["libgptutils.gs201"],
 }
 
-bootctrl@1.0 {
-       srcs: [
-           "android.hardware.boot@1.0-impl.cpp",
-       ],
-       shared_libs: [
-           "libbootctrl",
-       ],
-   }
+cc_library_shared {
+    name: "android.hardware.boot@1.0-impl",
+    stem: "android.hardware.boot@1.0-impl-1.1",
+    defaults: ["android.hardware.boot@1.0-impl_defaults"],
+    static_libs: ["libgptutils.gs201"],
+}
