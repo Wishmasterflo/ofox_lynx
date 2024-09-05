@@ -19,3 +19,12 @@ cc_library {
     defaults: ["bootctrl_hal_defaults"],
     static_libs: ["libgptutils.gs201"],
 }
+
+bootctrl@1.0 {
+       srcs: [
+           "android.hardware.boot@1.0-impl.cpp",
+       ],
+       shared_libs: [
+           "libbootctrl",
+       ],
+   }
