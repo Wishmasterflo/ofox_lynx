@@ -29,6 +29,7 @@ $(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device
 $(call inherit-product-if-exists, vendor/google_devices/lynx/proprietary/lynx/device-vendor-lynx.mk)
 $(call inherit-product-if-exists, vendor/google_devices/lynx/proprietary/device-vendor.mk)
 
+# Copy fstab file to ramdisk
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/recovery/root/fstab.gs201:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/system/etc/fstab.gs201
 
