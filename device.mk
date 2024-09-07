@@ -91,11 +91,11 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service \
-    android.hardware.boot@1.0-impl-wrapper.recovery \
-    android.hardware.boot@1.0-impl-wrapper \
-    android.hardware.boot@1.0-impl.recovery \
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-service \
+    android.hardware.boot@1.2-impl-wrapper.recovery \
+    android.hardware.boot@1.2-impl-wrapper \
+    android.hardware.boot@1.2-impl.recovery \
 
 PRODUCT_PACKAGES += \
     bootctrl.gs201 \
