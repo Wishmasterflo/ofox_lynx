@@ -95,7 +95,7 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-service \
     android.hardware.boot@1.2-impl-wrapper.recovery \
     android.hardware.boot@1.2-impl-wrapper \
-    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2-impl.recovery
 
 PRODUCT_PACKAGES += \
     bootctrl.gs201 \
