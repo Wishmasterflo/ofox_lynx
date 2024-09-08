@@ -46,7 +46,10 @@ device/google/lynx/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.lynx.
 # Init files
 PRODUCT_COPY_FILES += \
 	device/google/lynx/recovery/root/init.recovery.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.recovery.usb.rc \
-	device/google/lynx/recovery/root/vendor/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
+	device/google/lynx/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.lynx.rc \
+        device/google/lynx/recovery/root/init.recovery.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.recovery.lynx.rc \
+        device/google/lynx/recovery/root/android.hardware.health-service.gs201_recovery.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/android.hardware.health-service.gs201_recovery.rc \
+        device/google/lynx/recovery/root/vendor/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
 # Device Manifest file
 DEVICE_MANIFEST_FILE := \
