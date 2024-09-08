@@ -8,6 +8,94 @@ on property:sys.usb.state=fastboot
 on property:sys.usb.state=adb
     write /sys/devices/platform/11210000.usb/dwc3_exynos_otg_b_sess 1
 
+on early-init
+    export ANDROID_ROOT /system
+    export ANDROID_DATA /data
+    export EXTERNAL_STORAGE /sdcard
+
+    symlink /proc/self/fd/0 /dev/stdin
+    symlink /proc/self/fd/1 /dev/stdout
+    symlink /proc/self/fd/2 /dev/stderr
+
+    symlink /system/bin /bin
+    symlink /system/etc /etc
+    rmdir /sbin
+    symlink /system/bin /sbin
+
+    mkdir /sdcard
+    mkdir /system
+    mkdir /data
+    mkdir /cache
+    mkdir /sideload
+    mkdir /mnt/system
+    mount tmpfs tmpfs /tmp
+
+    chown root shell /tmp
+    chmod 0775 /tmp
+
+    mkdir /storage 0050 root sdcard_r
+    mount tmpfs tmpfs /storage mode=0050,uid=0,gid=1028
+
+    mkdir /mnt 0775 root system
+
+    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/shell 0700 shell shell
+
+    # Directory for staging bindmounts
+    mkdir /mnt/staging 0700 root root
+
+    write /proc/sys/kernel/panic_on_oops 1
+    write /proc/sys/vm/max_map_count 1000000
+
+    # Mount binderfs
+    mkdir /dev/binderfs
+    mount binder binder /dev/binderfs stats=global
+    chmod 0755 /dev/binderfs
+
+    symlink /dev/binderfs/binder /dev/binder
+    chmod 0666 /dev/binderfs/binder
+
+    # Start essential services
+    start servicemanager
+
+    # pstore/ramoops previous console log
+    mount pstore pstore /sys/fs/pstore 
+
+   # Set the security context of /postinstall if present.
+    restorecon /postinstall
+
+    # Copy prebuilt ld.config.txt into linkerconfig directory
+    copy /system/etc/ld.config.txt /linkerconfig/ld.config.txt
+    chmod 444 /linkerconfig/ld.config.txt
+
+    start ueventd
+
+    setprop sys.usb.configfs 0
+
+on boot
+    ifup lo
+    hostname localhost
+    domainname localdomain
+
+    class_start default
+    class_start hal
+
+on firmware_mounts_complete
+   rm /dev/.booting
+
+# Mount filesystems and start core system services.
+on late-init
+    trigger early-fs
+    trigger fs
+    trigger post-fs
+    trigger post-fs-data
+
+    # Remove a file to wake up anything waiting for firmware
+    trigger firmware_mounts_complete
+
+    trigger early-boot
+    trigger boot
+
 on init
     wait /sys/devices/platform/11210000.usb/11210000.dwc3/driver 10
     setprop sys.usb.controller "11210000.dwc3"
@@ -23,6 +111,33 @@ on init
 on init && property:ro.debuggable=1 && property:ro.boot.mode=recovery
     start recovery-console
 
+service ueventd /system/bin/ueventd
+    critical
+    seclabel u:r:ueventd:s0
+    user root
+
+service console /system/bin/sh
+    class core
+    console
+    disabled
+    user shell
+    group shell log readproc
+    seclabel u:r:shell:s0
+    setenv HOSTNAME console
+
+on init && property:ro.debuggable=1
+    start console
+
+service charger /system/bin/charger
+    critical
+    seclabel u:r:charger:s0
+    user root
+
+service recovery /system/bin/recovery
+    socket recovery stream 422 system system
+    seclabel u:r:recovery:s0
+    user root
+
 service recovery-console /system/bin/sh
     class core
     console
@@ -31,6 +146,22 @@ service recovery-console /system/bin/sh
     group root shell log readproc
     seclabel u:r:su:s0
     setenv HOSTNAME console
+
+service adbd /system/bin/adbd --root_seclabel=u:r:su:s0 --device_banner=recovery
+    disabled
+    socket adbd stream 660 system system
+    seclabel u:r:adbd:s0
+    user root
+
+service fastbootd /system/bin/fastbootd
+    disabled
+    group system
+    seclabel u:r:fastbootd:s0
+    user root
+
+# Restart adbd so it can run as root
+on property:service.adb.root=1
+    restart adbd
 
 service citadeld /system/bin/citadeld
     disabled
