@@ -8,6 +8,7 @@
 DEVICE_PATH := device/google/lynx
 
 include device/google/gs201/BoardConfig-common.mk
+include vendor/google_devices/lynx/BoardConfigVendor.mk
 
 TARGET_BOARD_INFO_FILE := device/google/lynx/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := lynx
