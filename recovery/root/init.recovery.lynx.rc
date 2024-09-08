@@ -162,39 +162,3 @@ service fastbootd /system/bin/fastbootd
 # Restart adbd so it can run as root
 on property:service.adb.root=1
     restart adbd
-
-service citadeld /system/bin/citadeld
-    disabled
-    user hsm
-    group hsm
-    seclabel u:r:recovery:s0
-
-service weaver-citadeld /system/bin/android.hardware.weaver@1.0-service.citadel
-    disabled
-    user hsm
-    group hsm
-    seclabel u:r:recovery:s0
-
-service identity-citadeld /system/bin/android.hardware.identity@1.0-service.citadel
-    disabled
-    user nobody
-    group nobody
-    seclabel u:r:recovery:s0
-
-service keymint-trusty /system/bin/android.hardware.security.keymint-service.trusty
-    disabled
-    user nobody
-    group drmrpc
-    seclabel u:r:recovery:s0
-
-service keymint-citadel /system/bin/android.hardware.security.keymint-service.citadel
-    disabled
-    user hsm
-    group hsm
-    seclabel u:r:recovery:s0
-
-service gatekeeper /system/bin/android.hardware.gatekeeper@1.0-service.trusty
-    disabled
-    user system
-    group system
-    seclabel u:r:recovery:s0
