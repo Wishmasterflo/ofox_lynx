@@ -169,6 +169,17 @@ PRODUCT_PACKAGES += \
     nos_app_weaver:64 \
     pixelpowerstats_provider_aidl_interface-cpp.vendor:64
 
+# Additional binaries & libraries needed for recovery
+TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hidl.base@1.0 \
+    libcap \
+    libion \
+    libpcrecpp \
+    libxml2 \
+    libfs \
+    libfs_mgr \
+    libfs_mgr_binder    
+
 # Misc interfaces
 PRODUCT_PACKAGES += \
     android.frameworks.stats-V1-ndk.vendor:32 \
@@ -210,7 +221,8 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.6.vendor:64 \
     com.google.hardware.pixel.display-V4-ndk.vendor:64 \
     com.google.hardware.pixel.display-V5-ndk.vendor \
-    com.google.hardware.pixel.display-V6-ndk.vendor
+    com.google.hardware.pixel.display-V6-ndk.vendor \
+    android.hardware.boot-V1-ndk
 
 # PowerStats HAL
 PRODUCT_PACKAGES += \
@@ -239,4 +251,3 @@ PRODUCT_PACKAGES += \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
-
