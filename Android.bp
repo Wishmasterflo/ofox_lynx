@@ -13,6 +13,6 @@ soong_namespace {
 		"hardware/google/pixel/bootctrl",
 		"device/google/lynx/bootctrl",
 		"device/google/lynx/gpt-utils",
-		"device/google/lynx/pixelstats",
+		"device/google/gs201/pixelstats",
 	],
 }
