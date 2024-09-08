@@ -9,7 +9,7 @@
 /dtbo				emmc		/dev/block/platform/14700000.ufs/by-name/dtbo	              flags=slotselect;display="DTBO";backup=1;flashimg=1
 /efs                            emmc            /dev/block/platform/14700000.ufs/by-name/efs                  flags=slotselect;display="EFS";backup=1;flashimg=1
 /persist		        ext4		/dev/block/platform/14700000.ufs/by-name/persist              flags=slotselect;display="Persist";backup=1;flashimg=1
-/metadata                 f2fs     /dev/block/platform/14700000.ufs/by-name/metadata          flags=slotselect;display="Metadata";backup=1;flashimg=1
+/metadata                   f2fs     /dev/block/platform/14700000.ufs/by-name/metadata          flags=slotselect;display="Metadata";backup=1;flashimg=1
 /misc                           emmc            /dev/block/platform/14700000.ufs/by-name/misc 
 /modem				emmc		/dev/block/platform/14700000.ufs/by-name/modem	              flags=slotselect;backup=1;display="Modem"
 /super                          emmc            /dev/block/platform/14700000.ufs/by-name/super	              flags=slotselect;display="Super";backup=1;flashimg=1
