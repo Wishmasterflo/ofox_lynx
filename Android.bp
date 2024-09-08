@@ -7,7 +7,7 @@
 
 soong_namespace {
 	imports: [
-		"system/extras/bootctrl",
+		"system/extras/bootctl",
 		"device/google/gs-common/bootctrl/aidl",
 		"device/google/gs-common/bootctrl/1.2",
 		"hardware/google/pixel/bootctrl",
