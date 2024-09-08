@@ -83,6 +83,7 @@ PRODUCT_PACKAGES += \
     cppreopts.sh \
     checkpoint_gc \
     update_engine \
+    update_engine_client \
     update_engine_sideload \
     update_verifier
 
