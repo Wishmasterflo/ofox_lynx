@@ -58,9 +58,6 @@ export OF_SKIP_FBE_DECRYPTION=1
 # Use /data/recovery/Fox/ for Storage
 export FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
 
-# For some reason this is dumb and necessary
-export FOX_BUGGED_AOSP_ARB_WORKAROUND="1601559499"
-
 export OF_QUICK_BACKUP_LIST="/boot;/init_boot;/data;"
 
 # Magisk
@@ -70,10 +67,10 @@ export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v27.0.zip
 export FOX_DELETE_AROMAFM=1
 
 # Add some extras
+export FOX_USE_SED_BINARY=1
 export FOX_USE_ZIP_BINARY=1
 export FOX_USE_TAR_BINARY=1
-export FOX_ASH_IS_BASH=1
-export FOX_REPLACE_BUSYBOX_PS=1
+export FOX_USE_BUSYBOX_BINARY=1
 export FOX_USE_BASH_SHELL=1
 export OF_USE_LZ4_COMPRESSION=1 
 export FOX_USE_NANO_EDITOR=1
