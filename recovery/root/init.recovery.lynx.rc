@@ -100,13 +100,6 @@ on init
     wait /sys/devices/platform/11210000.usb/11210000.dwc3/driver 10
     setprop sys.usb.controller "11210000.dwc3"
     setprop sys.usb.configfs 1
-    start gatekeeper
-    start citadeld
-    start keymint-citadel
-    start keymint-trusty
-    start identity-citadeld
-    start weaver-citadeld
-    
 
 on init && property:ro.debuggable=1 && property:ro.boot.mode=recovery
     start recovery-console
