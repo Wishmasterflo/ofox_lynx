@@ -170,6 +170,13 @@ PRODUCT_PACKAGES += \
     nos_app_weaver:64 \
     pixelpowerstats_provider_aidl_interface-cpp.vendor:64
 
+# SKU specific RROs
+PRODUCT_PACKAGES += \
+    SettingsOverlayG82U8 \
+    SettingsOverlayG0DZQ \
+    SettingsOverlayGHL1X \
+    SettingsOverlayGWKK3
+
 # Misc interfaces
 PRODUCT_PACKAGES += \
     android.frameworks.stats-V1-ndk.vendor:32 \
