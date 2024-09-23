@@ -7,12 +7,6 @@
 
 soong_namespace {
 	imports: [
-		"system/extras/bootctl",
-		"device/google/gs-common/bootctrl/aidl",
-		"device/google/gs-common/bootctrl/1.2",
-		"hardware/google/pixel/bootctrl",
 		"device/google/lynx/bootctrl",
-		"device/google/lynx/gpt-utils",
-		"device/google/gs201/pixelstats",
 	],
 }
