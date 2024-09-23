@@ -161,7 +161,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_WIPE := device/google/lynx/recovery.wipe
-TARGET_RECOVERY_FSTAB := device/google/lynx/recovery/root/system/etc/recovery.fstab
 
 # Ramdisk compression
 BOARD_RAMDISK_USE_LZ4 := true
