@@ -41,10 +41,6 @@ PRODUCT_PACKAGES += \
 
 # Init files
 PRODUCT_COPY_FILES += \
-device/google/lynx/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.lynx.rc
-
-# Init files
-PRODUCT_COPY_FILES += \
 	device/google/lynx/recovery/root/init.recovery.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.recovery.usb.rc \
 	device/google/lynx/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.lynx.rc \
         device/google/lynx/recovery/root/init.recovery.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.recovery.lynx.rc \
@@ -84,7 +80,6 @@ PRODUCT_PACKAGES += \
     cppreopts.sh \
     checkpoint_gc \
     update_engine \
-    update_engine_client \
     update_engine_sideload \
     update_verifier
 
