@@ -239,3 +239,7 @@ include device/google/gs-common/touch/twoshay/aidl_gs101.mk
 # Build libion
 PRODUCT_PACKAGES += \
     libion
+
+# Copy Manifest file
+PRODUCT_COPY_FILES += \
+    device/google/lynx/recovery/root/vendor/etc/vintf/manifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/vintf/manifest.xml 
