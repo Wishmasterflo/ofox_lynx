@@ -22,6 +22,8 @@ TARGET_IS_64_BIT := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+PRODUCT_ENFORCE_VINTF_MANIFEST := true 
+DEVICE_MANIFEST_FILE := device/google/lynx/recovery/root/vendor/etc/vintf/manifest.xml
 
 # Architecture
 TARGET_ARCH := arm64
@@ -38,7 +40,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
-# Enable 64-bit for non-zygote.
+# Enable 64-bit for non-zygote
 ZYGOTE_FORCE_64 := true
 
 # Force any prefer32 targets to be compiled as 64 bit.
@@ -169,6 +171,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_WIPE := device/google/lynx/recovery.wipe
+TARGET_RECOVERY_FSTAB := device/google/lynx/recovery.fstab
 
 # Ramdisk compression
 BOARD_RAMDISK_USE_LZ4 := true
