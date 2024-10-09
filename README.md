@@ -15,7 +15,7 @@ This is still "work in progress" and not a fully working recovery yet.
  - Data decryption
  - Slot switching after a OTA file installation
      
-## Installation methods:
+## Installation methods
 
 ## From recovery:
 adb sideload OrangeFox-R11.1-Unofficial-lynx-v2.zip
