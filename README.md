@@ -14,6 +14,14 @@ fastboot flash vendor_boot OrangeFox-R11.1-Unofficial-lynx.img
 
 ## Changelog
 
+# 10-Oct-2024 R11.1 V2
+  -  Synced with latest Orangefox source changes
+  -  Based on September 2024 Kernel
+  -  Fixed inverted colors, so now we have "Orangefox"
+  -  USB (adb) working (USB OTG is still not working!)
+  -  Automatic slot switching after flashing a OTA File is not working yet
+  -  Haptics and Vibration is disabled now (as it conflicts with the Touchscreen)
+
 # 30-Aug-2024 R11.1 V1
   -  Initial Orangefox recovery Version for Google Pixel 7a
   -  Based on August 2024 Kernel
