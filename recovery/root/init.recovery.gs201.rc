@@ -1,5 +1,0 @@
-on init
-    wait /sys/devices/platform/11210000.usb/11210000.dwc3/driver 10
-    setprop sys.usb.controller "11210000.dwc3"
-    setprop sys.usb.configfs 1
-
