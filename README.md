@@ -7,10 +7,10 @@ This is still "work in progress" and not a fully working recovery yet.
 ## Installation methods:
 
 ## From recovery:
-adb sideload OrangeFox-R11.1-Unofficial-lynx.zip
+adb sideload OrangeFox-R11.1-Unofficial-lynx-v2.zip
 
 ## From bootloader/fastboot:
-fastboot flash vendor_boot OrangeFox-R11.1-Unofficial-lynx.img
+fastboot flash vendor_boot OrangeFox-R11.1-Unofficial-lynx-v2.img
 
 ## Changelog
 
