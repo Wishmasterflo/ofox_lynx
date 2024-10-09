@@ -1,5 +1,3 @@
-import /init.recovery.${ro.board.platform}.rc
-
 # DELETE ME USB BRINGUP b/188672439.  Delete the following two lines after
 # USB is brought up completely.
 on property:sys.usb.state=fastboot
