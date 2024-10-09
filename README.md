@@ -3,7 +3,18 @@
 # Orangefox Recovery for Google Pixel 7a (lynx)
 
 This is still "work in progress" and not a fully working recovery yet.
-  
+
+# working
+ - adb
+ - Flashing files and OTA Updates
+ - Data Backup/Restore can be used whem the phone is not encrypted
+   That can be achieved with DFE-neo but needs a Format Data once after flashing it
+
+# not working 
+ - USB OTG
+ - Data decryption
+ - Slot switching after a OTA file installation
+     
 ## Installation methods:
 
 ## From recovery:
