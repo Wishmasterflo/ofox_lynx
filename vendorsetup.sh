@@ -52,9 +52,6 @@ export FOX_BUILD_BASH=1
 # Run a process after formatting data to work-around MTP issues
 export OF_RUN_POST_FORMAT_PROCESS=1
 
-# Disable decryption
-export OF_SKIP_FBE_DECRYPTION=1
-
 # Use /data/recovery/Fox/ for Storage
 export FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
 
