@@ -201,6 +201,7 @@ BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Load Touch modules files
 TW_LOAD_VENDOR_MODULES := "heatmap.ko touch_offload.ko ftm5.ko focal_touch.ko goodix_brl_touch.ko goog_touch_interface.ko"
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # TWRP specific build flags
 TWRP_EVENT_LOGGING := true
@@ -216,6 +217,8 @@ TW_MAX_BRIGHTNESS := 520
 TW_INCLUDE_FASTBOOTD := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_USE_TOOLBOX := true
+TW_INCLUDE_LPDUMP := true
+TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_REPACKTOOLS := true
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TW_EXCLUDE_DEFAULT_USB_INIT := true
