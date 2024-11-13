@@ -80,6 +80,7 @@ PRODUCT_PACKAGES += \
     cppreopts.sh \
     checkpoint_gc \
     update_engine \
+    update_engine_client \
     update_engine_sideload \
     update_verifier
 
@@ -105,10 +106,9 @@ PRODUCT_PACKAGES += \
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# fastbootd
+# Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery \
+    android.hardware.fastboot@1.1-impl-mock \
     fastbootd 
 
 # vndservicemanager and vndservice no longer included in API 30+, however needed by vendor code.
@@ -127,14 +127,18 @@ PRODUCT_COPY_FILES += \
 
 # USB HAL
 PRODUCT_PACKAGES += \
-	android.hardware.usb-service
-PRODUCT_PACKAGES += \
+	android.hardware.usb-service \
 	android.hardware.usb.gadget-service
 
 # SecureElement
 PRODUCT_PACKAGES += \
 	android.hardware.secure_element@1.2-service-gto \
 	android.hardware.secure_element@1.2-service-gto-ese2
+
+# Health service
+PRODUCT_PACKAGES += \
+     android.hardware.health-service.gs201 \
+     android.hardware.health-service.gs201_recovery
 
 # Power HAL config
 PRODUCT_COPY_FILES += \
@@ -144,6 +148,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     device/google/lynx/powerstats \
     device/google/lynx
+
+# PowerStats HAL
+PRODUCT_PACKAGES += \
+	android.hardware.power.stats-service.pixel
 
 # Identity credential
 PRODUCT_PACKAGES += \
@@ -216,9 +224,9 @@ PRODUCT_PACKAGES += \
     com.google.hardware.pixel.display-V5-ndk.vendor \
     com.google.hardware.pixel.display-V6-ndk.vendor
 
-# PowerStats HAL
-PRODUCT_PACKAGES += \
-	android.hardware.power.stats-service.pixel
+# Fix data/media/0 bug
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 PRODUCT_PACKAGES += \
 	android.hardware.graphics.mapper@4.0-impl \
@@ -235,6 +243,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Touch service
 include device/google/gs-common/touch/twoshay/aidl_gs101.mk
+
+# Build libtrusty
+PRODUCT_PACKAGES += libtrusty
 
 # Build libion
 PRODUCT_PACKAGES += \
