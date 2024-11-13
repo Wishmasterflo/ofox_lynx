@@ -90,13 +90,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-# Boot control HAL
+# HAL Bootctrl Pixel
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-service \
-    android.hardware.boot@1.2-impl-wrapper.recovery \
-    android.hardware.boot@1.2-impl-wrapper \
-    android.hardware.boot@1.2-impl.recovery
+    android.hardware.boot@1.2-service-pixel \
+    android.hardware.boot@1.2-impl-pixel
 
 PRODUCT_PACKAGES += \
     bootctrl.gs201 \
@@ -243,6 +240,21 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Touch service
 include device/google/gs-common/touch/twoshay/aidl_gs101.mk
+
+# Pixel Common
+include hardware/google/pixel/common/pixel-common-device.mk
+
+# storage
+-include hardware/google/pixel/pixelstats/device.mk
+
+# thermal
+-include hardware/google/pixel/thermal/device.mk
+
+# power HAL
+-include hardware/google/pixel/power-libperfmgr/aidl/device.mk
+
+# mm_event
+-include hardware/google/pixel/mm/device.mk
 
 # Build libtrusty
 PRODUCT_PACKAGES += libtrusty
