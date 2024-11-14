@@ -35,9 +35,12 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     linker.vendor_ramdisk \
+    linker_hwasan64.vendor_ramdisk \
     resize2fs.vendor_ramdisk \
     fsck.vendor_ramdisk \
-    tune2fs.vendor_ramdisk
+    tune2fs.vendor_ramdisk \
+    dump.f2fs.vendor_ramdisk \
+    defrag.f2fs.vendor_ramdisk
 
 # Init files
 PRODUCT_COPY_FILES += \
