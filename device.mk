@@ -44,7 +44,6 @@ PRODUCT_COPY_FILES += \
 	device/google/lynx/recovery/root/init.recovery.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.recovery.usb.rc \
 	device/google/lynx/init.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.lynx.rc \
         device/google/lynx/recovery/root/init.recovery.lynx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.recovery.lynx.rc \
-        device/google/lynx/recovery/root/android.hardware.boot-service.default_recovery-pixel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/android.hardware.boot-service.default_recovery-pixel.rc \
         device/google/lynx/recovery/root/android.hardware.health-service.gs201_recovery.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/android.hardware.health-service.gs201_recovery.rc \
         device/google/lynx/recovery/root/vendor/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
@@ -94,11 +93,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-service-pixel \
     android.hardware.boot@1.2-impl-pixel
-
-PRODUCT_PACKAGES += \
-    bootctrl.gs201 \
-    bootctrl.gs201.recovery \
-    bootctl
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -252,9 +246,6 @@ include hardware/google/pixel/common/pixel-common-device.mk
 
 # power HAL
 -include hardware/google/pixel/power-libperfmgr/aidl/device.mk
-
-# mm_event
--include hardware/google/pixel/mm/device.mk
 
 # Build libtrusty
 PRODUCT_PACKAGES += libtrusty
