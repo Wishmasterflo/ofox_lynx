@@ -13,11 +13,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// soong_namespace {
-//     imports: [
-//         "hardware/google/pixel",
-//     ],
-// }
+ soong_namespace {
+     imports: [
+         "hardware/google/pixel",
+     ],
+ }
 
 // package {
 //     // See: http://go/android-license-faq
