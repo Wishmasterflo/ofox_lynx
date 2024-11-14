@@ -1,3 +1,4 @@
 ro.display.series=Pixel 7a
 ro.board.platform=gs201
+persist.sys.isUsbOtgEnabled=true
 ro.adb.secure=0
