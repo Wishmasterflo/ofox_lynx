@@ -1,3 +1,53 @@
+
+fox_dir=$(pwd)
+
+inject_self_repacker(){
+    file="$fox_dir/bootable/recovery/twrpRepacker.cpp"
+    # Checking if a file exists
+    if [ ! -f "$file" ]; then
+        echo "File not found: $file"
+        exit 1
+    fi
+    if grep -q "bool twrpRepacker::Flash_Current_Twrp()" "$file"; then
+        echo "Function twrpRepacker::Flash_Current_Twrp() found in file"
+        if ! grep -q "if (TWFunc::Path_Exists(\"/system/bin/reflash_recovery.sh\"))" "$file"; then
+            echo "Insert the code into the twrpRepacker::Flash_Current_Twrp() function"
+            sed -i '/bool twrpRepacker::Flash_Current_Twrp() {/a \
+    if (TWFunc::Path_Exists("/system/bin/reflash_recovery.sh")) {\
+        gui_print("- Starting custom reflash recovery script\\n");\
+        int pipe_fd[2];\
+        if (pipe(pipe_fd) == -1) {\
+            LOGERR("Failed to create pipe");\
+            return false;\
+        }\
+        if (TWFunc::Path_Exists("/system/bin/reflash_recovery.sh")) {\
+            std::string command = "/system/bin/reflash_recovery.sh " + std::to_string(pipe_fd[1]) + " " + std::to_string(pipe_fd[0]);\
+            gui_print("- Reflashing recovery\\n");\
+            int result = TWFunc::Exec_Cmd(command);\
+            if (result != 0) {\
+                LOGERR("Script reflash_recovery.sh failed with error code: %d", result);\
+                gui_print_color("error", "Script reflash_recovery.sh failed with error code: %d\\n", result);\
+                return false;\
+            }\
+            gui_print_color("green", "- Successfully flashed recovery to both slots\\n");\
+            close(pipe_fd[0]);\
+            close(pipe_fd[1]);\
+            return true;\
+        }\
+        return false;\
+    }' "$file"
+            echo "The code has been inserted successfully."
+        else
+            echo "The code is already present in the twrpRepacker::Flash_Current_Twrp() function."
+        fi
+    else
+        echo "Function twrpRepacker::Flash_Current_Twrp() not found in file."
+        exit 1
+    fi
+}
+
+inject_self_repacker 
+
 export TARGET_ARCH="arm64-v8a"
 
 # Some about us
