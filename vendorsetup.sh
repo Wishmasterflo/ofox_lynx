@@ -17,9 +17,6 @@ export BUILD_HOSTNAME="android-build"
 export OF_USE_MAGISKBOOT=1
 export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
 
-# Vanilla build
-export FOX_VANILLA_BUILD=1
-
 # We have a/b partitions
 export FOX_AB_DEVICE=1
 export FOX_VIRTUAL_AB_DEVICE=1
