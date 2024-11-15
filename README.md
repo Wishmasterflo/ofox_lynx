@@ -5,7 +5,7 @@
 This is still "work in progress" and not a fully working recovery yet.
 
 # working
- - adb
+ - adb / sideload
  - Flashing files and OTA Updates
  - Data Backup/Restore can be used whem the phone is not encrypted
    That can be achieved with DFE-neo but needs a Format Data once after flashing it
@@ -13,18 +13,23 @@ This is still "work in progress" and not a fully working recovery yet.
 # not working 
  - USB OTG
  - Data decryption
- - Slot switching after a OTA file installation
      
 ## Installation methods
 
 ## From recovery:
-adb sideload OrangeFox-R11.1-Unofficial-lynx-v2.zip
+adb sideload OrangeFox-R11.1-Unofficial-lynx-v3.zip
 
 ## From bootloader/fastboot:
-fastboot flash vendor_boot OrangeFox-R11.1-Unofficial-lynx-v2.img
+fastboot flash vendor_boot OrangeFox-R11.1-Unofficial-lynx-v3.img
 
 ## Changelog
 
+# 15-Nov-2024 R11.1 V3
+  - Synced with latest Orangefox source changes
+  - Based on November 2024 Android 15 Kernel
+  - Added Pixel Bootctrl HAL (to fix slot switching etc)
+  - Added adjusted dfe-neo to Orangefox.zip file
+  
 # 10-Oct-2024 R11.1 V2
   -  Synced with latest Orangefox source changes
   -  Based on September 2024 Kernel
