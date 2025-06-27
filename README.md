@@ -24,6 +24,11 @@ fastboot flash vendor_boot OrangeFox-R11.1-Unofficial-lynx-v3.img
 
 ## Changelog
 
+# 23-Nov-2024 R11.1 V4
+  - Synced with latest Orangefox source changes
+  - Enabled reflash current Orangefox function after flashing a ROM
+  - added adjusted DFE-neo zip file for Google Pixel 7a to download
+
 # 15-Nov-2024 R11.1 V3
   - Synced with latest Orangefox source changes
   - Based on November 2024 Android 15 Kernel
