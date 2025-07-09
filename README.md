@@ -17,13 +17,19 @@ This is still "work in progress" and not a fully working recovery yet.
 ## Installation methods
 
 ## From recovery:
-adb sideload OrangeFox-R11.1-Unofficial-lynx-v3.zip
+adb sideload OrangeFox-R11.3-Unofficial-lynx-v5.zip
 
 ## From bootloader/fastboot:
-fastboot flash vendor_boot OrangeFox-R11.1-Unofficial-lynx-v3.img
+fastboot flash vendor_boot OrangeFox-R11.3-Unofficial-lynx-v5.img
 
 ## Changelog
 
+# 09-Jul-2025 R11.3 V5
+  - Based on latest Orangefox R11.3 Version
+  - Build with updated fox_14.1 branch
+  - Updated prebuilt Kernel to July 2025 Android 16 Kernel
+  - Updated Magisk addon to Magisk v29.0
+    
 # 23-Nov-2024 R11.1 V4
   - Synced with latest Orangefox source changes
   - Enabled reflash current Orangefox function after flashing a ROM
