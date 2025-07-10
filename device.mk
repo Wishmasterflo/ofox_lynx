@@ -23,12 +23,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-$(call inherit-product-if-exists, vendor/google_devices/lynx/prebuilts/device-vendor-lynx.mk)
-$(call inherit-product-if-exists, vendor/google_devices/gs201/prebuilts/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/lynx/proprietary/lynx/device-vendor-lynx.mk)
-$(call inherit-product-if-exists, vendor/google_devices/lynx/proprietary/device-vendor.mk)
-
 # Copy fstab file to ramdisk
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/recovery/root/fstab.gs201:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/system/etc/fstab.gs201
@@ -234,21 +228,6 @@ PRODUCT_PACKAGES += \
 # Use FUSE passthrough
 PRODUCT_PRODUCT_PROPERTIES += \
 	persist.sys.fuse.passthrough.enable=true
-
-# Touch service
-include device/google/gs-common/touch/twoshay/aidl_gs101.mk
-
-# Pixel Common
-include hardware/google/pixel/common/pixel-common-device.mk
-
-# storage
--include hardware/google/pixel/pixelstats/device.mk
-
-# thermal
--include hardware/google/pixel/thermal/device.mk
-
-# power HAL
--include hardware/google/pixel/power-libperfmgr/aidl/device.mk
 
 # Build libtrusty
 PRODUCT_PACKAGES += libtrusty
