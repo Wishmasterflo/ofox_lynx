@@ -107,9 +107,6 @@ export FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
 
 export OF_QUICK_BACKUP_LIST="/boot;/init_boot;/vendor_boot;/vendor_kernel_boot"
 
-# Magisk
-export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v29.0.zip
-
 # Dont install AROMAFM
 export FOX_DELETE_AROMAFM=1
 
